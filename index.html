@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seviyonmubeya</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+      overflow-x: hidden;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      position: absolute;
+    }
+    #evet {
+      left: 30%;
+      top: 40%;
+    }
+    #hayir {
+      left: 50%;
+      top: 40%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Beni seviyor musun?</h1>
+  <div class="container">
+    <button id="evet" onclick="sevdin()">Evet</button>
+    <button id="hayir" onclick="kac()" ontouchstart="kac()">Hayır</button>
+  </div>
+
+  <script>
+    function sevdin() {
+      alert("BENDE SENİ ÇOK SEVİYORUM ❤️");
+    }
+    
+    function kac() {
+      let button = document.getElementById("hayir");
+      let maxWidth = window.innerWidth - button.offsetWidth;
+      let maxHeight = window.innerHeight - button.offsetHeight;
+      
+      let newX = Math.random() * maxWidth;
+      let newY = Math.random() * maxHeight;
+      
+      button.style.left = `${newX}px`;
+      button.style.top = `${newY}px`;
+    }
+  </script>
+</body>
+</html>
